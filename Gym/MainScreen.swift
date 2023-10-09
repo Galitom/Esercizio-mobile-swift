@@ -4,6 +4,12 @@ struct MainScreen: View {
     @State private var forms: [String] = []
 
     var body: some View {
+        HStack{
+            Rectangle()
+                .background(.tint)
+                .foregroundColor(.blue)
+                .frame(height: 80)
+        }
         ScrollView(.horizontal) {
             LazyHStack() {
                 ForEach(forms.indices, id: \.self) { index in
