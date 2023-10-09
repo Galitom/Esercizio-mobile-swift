@@ -1,10 +1,3 @@
-//
-//  GymTests.swift
-//  GymTests
-//
-//  Created by Deborah Nimis on 10/3/23.
-//
-
 import XCTest
 @testable import Gym
 

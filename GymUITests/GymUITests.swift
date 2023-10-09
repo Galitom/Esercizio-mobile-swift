@@ -1,10 +1,3 @@
-//
-//  GymUITests.swift
-//  GymUITests
-//
-//  Created by Deborah Nimis on 10/3/23.
-//
-
 import XCTest
 
 final class GymUITests: XCTestCase {
