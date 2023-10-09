@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		988E2E712ACCBAE900DBEA03 /* GymApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E2E702ACCBAE900DBEA03 /* GymApp.swift */; };
-		988E2E732ACCBAE900DBEA03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E2E722ACCBAE900DBEA03 /* ContentView.swift */; };
+		988E2E732ACCBAE900DBEA03 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E2E722ACCBAE900DBEA03 /* MainScreen.swift */; };
 		988E2E752ACCBAEA00DBEA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988E2E742ACCBAEA00DBEA03 /* Assets.xcassets */; };
 		988E2E782ACCBAEA00DBEA03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988E2E772ACCBAEA00DBEA03 /* Preview Assets.xcassets */; };
 		988E2E822ACCBAEA00DBEA03 /* GymTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E2E812ACCBAEA00DBEA03 /* GymTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		988E2E6D2ACCBAE900DBEA03 /* Gym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988E2E702ACCBAE900DBEA03 /* GymApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymApp.swift; sourceTree = "<group>"; };
-		988E2E722ACCBAE900DBEA03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		988E2E722ACCBAE900DBEA03 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		988E2E742ACCBAEA00DBEA03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		988E2E772ACCBAEA00DBEA03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		988E2E7D2ACCBAEA00DBEA03 /* GymTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				988E2E702ACCBAE900DBEA03 /* GymApp.swift */,
-				988E2E722ACCBAE900DBEA03 /* ContentView.swift */,
+				988E2E722ACCBAE900DBEA03 /* MainScreen.swift */,
 				988E2E742ACCBAEA00DBEA03 /* Assets.xcassets */,
 				988E2E762ACCBAEA00DBEA03 /* Preview Content */,
 			);
@@ -207,7 +207,7 @@
 				};
 			};
 			buildConfigurationList = 988E2E682ACCBAE900DBEA03 /* Build configuration list for PBXProject "Gym" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				988E2E732ACCBAE900DBEA03 /* ContentView.swift in Sources */,
+				988E2E732ACCBAE900DBEA03 /* MainScreen.swift in Sources */,
 				988E2E712ACCBAE900DBEA03 /* GymApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
