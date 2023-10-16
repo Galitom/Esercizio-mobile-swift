@@ -1,91 +1,31 @@
 import SwiftUI
 
 struct MainScreen: View {
-	@State private var forms: [String] = []
-	@State private var menuVisible = false
-	
-	func addForm() {
-		let newFormName = "Scheda \(forms.count + 1)"
-		forms.append(newFormName)
-		print("Added form: \(newFormName)")
-	}
-	
-	func removeForm(at index: Int) {
-		if forms.indices.contains(index) {
-			forms.remove(at: index)
-		}
-	}
-	
-	func renameForm(){
-		
-	}
-	
 	//Scheda Principale
 	var body: some View {
-		//Schermata applicazione divisa in livelli per sovrapposizione menu
-		ZStack{
-			//Disposizione verticale degli oggetti della schermata
-			VStack{
-				//sovrapposizione della barra in alto con pulsante button
-				ZStack{
+		NavigationView {
+			NavigationStack {
+				List{
+					carousel()
 					Rectangle()
-						.background(.tint)
-						.foregroundColor(.blue)
-						.frame(height: 70)
-					HStack{
-						Spacer()
-						Button(action: {
-							menuVisible.toggle()
-							print("menu is open: \(menuVisible)")
-						}) {
-							/*HStack{
-								Image(systemName: "person.crop.circle.fill")
-									.font(.system(size: 45))
-								//.symbolRenderingMode(.hierarchical)
-									.accentColor(Color(red: 201/255, green: 201/255, blue: 201/255, opacity: 1))
-								*/
-														
-							 HStack{
-								 Image(systemName: "gear")
-									 .font(.system(size: 35))
-								 //.symbolRenderingMode(.hierarchical)
-									 .accentColor(Color(red: 201/255, green: 201/255, blue: 201/255, opacity: 1))
-							}
-							//.background(Color.red.opacity(0.3))
-						}
-					}
-					.padding([.horizontal],25)
-				}
-				
-				//Carosello Schede
-				ScrollView(.horizontal) {
-					LazyHStack() {
-						ForEach(forms.indices, id: \.self) { index in
-							scheda(index: index, formName: forms[index], forms: $forms, removeForm: removeForm)
-						}
-						defaultButtonCarousel(addForm: addForm)
-					}
-					.padding([.horizontal], 25)
-				}
-				.scrollTargetBehavior(.paging)
-					
-				HStack {
-					RoundedRectangle(cornerRadius: 25)
-						.fill(.blue)
-						.frame(width: 200, height: 200)
-				}
-					
-				HStack {
-					RoundedRectangle(cornerRadius: 25)
-						.fill(.blue)
-						.frame(width: 200, height: 200)
-						.padding([.top])
+						.frame(height: 1000)
 					}
 				}
-				
-				if (menuVisible){
-					menuAccount()
+				.navigationTitle("Home")
+				.toolbar{
+					NavigationLink(destination: AccountScreen()) {
+						Image(systemName: "person.crop.circle.fill")
+							.font(.system(size: 35))
+							.symbolRenderingMode(.hierarchical)
+							.accentColor(Color(red: 201/255, green: 201/255, blue: 201/255, opacity: 1))
+							.foregroundColor(.white)
+							.padding([.bottom], 10)
+							
+					}
 				}
+				.toolbarColorScheme(.dark, for: .navigationBar)
+				.toolbarBackground(Color.blue, for: .navigationBar)
+				.toolbarBackground(.visible, for: .navigationBar)
 			}
 		}
 	}
@@ -121,6 +61,39 @@ struct scheda: View {
     }
 }
 
+struct carousel: View{
+	@State private var forms: [String] = []
+	//@State private var menuVisible = false
+	
+	func addForm() {
+		let newFormName = "Scheda \(forms.count + 1)"
+		forms.append(newFormName)
+		print("Added form: \(newFormName)")
+	}
+	
+	func removeForm(at index: Int) {
+		if forms.indices.contains(index) {
+			forms.remove(at: index)
+		}
+	}
+	
+	func renameForm(){
+		
+	}
+	var body: some View{
+		ScrollView(.horizontal) {
+			LazyHStack() {
+				ForEach(forms.indices, id: \.self) { index in
+					scheda(index: index, formName: forms[index], forms: $forms, removeForm: removeForm)
+				}
+				defaultButtonCarousel(addForm: addForm)
+			}
+			.padding([.horizontal], 1)
+		}
+		.scrollTargetBehavior(.paging)
+	}
+}
+
 //Struttura Aggiungi Scheda
 struct defaultButtonCarousel: View {
     var addForm: () -> Void
@@ -145,7 +118,7 @@ struct defaultButtonCarousel: View {
     }
 }
 
-struct menuAccount: View{
+/*struct menuAccount: View{
 	var body: some View{
 		HStack{
 			Spacer()
@@ -167,7 +140,38 @@ struct menuAccount: View{
 			}
 		}
 	}
-}
+}*/
+
+struct navigationBar: View{
+	var body: some View{
+		NavigationStack {
+				Text("Corpo")
+			}
+			.navigationTitle("Home")
+			.toolbar{
+				VStack{
+					Rectangle()
+						.frame(height: 65)
+						.foregroundColor(.clear)
+					NavigationLink(destination: AccountScreen()) {
+						Image(systemName: "person.crop.circle.fill")
+							.font(.system(size: 40))
+							.symbolRenderingMode(.hierarchical)
+							.accentColor(Color(red: 201/255, green: 201/255, blue: 201/255, opacity: 1))
+							
+					}
+				}
+			}
+			.toolbarColorScheme(.dark, for: .navigationBar)
+			.toolbarBackground(
+
+				// 1
+				Color.blue,
+				// 2
+				for: .navigationBar)
+			.toolbarBackground(.visible, for: .navigationBar)
+		}
+	}
 
 #Preview {
     MainScreen()

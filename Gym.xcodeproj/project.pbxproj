@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98075C2C2ADD90C7001E28CB /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98075C2B2ADD90C7001E28CB /* AccountScreen.swift */; };
 		988E2E712ACCBAE900DBEA03 /* GymApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E2E702ACCBAE900DBEA03 /* GymApp.swift */; };
 		988E2E732ACCBAE900DBEA03 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E2E722ACCBAE900DBEA03 /* MainScreen.swift */; };
 		988E2E752ACCBAEA00DBEA03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988E2E742ACCBAEA00DBEA03 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		98075C2B2ADD90C7001E28CB /* AccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountScreen.swift; sourceTree = "<group>"; };
 		988E2E6D2ACCBAE900DBEA03 /* Gym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988E2E702ACCBAE900DBEA03 /* GymApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymApp.swift; sourceTree = "<group>"; };
 		988E2E722ACCBAE900DBEA03 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				988E2E702ACCBAE900DBEA03 /* GymApp.swift */,
 				988E2E722ACCBAE900DBEA03 /* MainScreen.swift */,
+				98075C2B2ADD90C7001E28CB /* AccountScreen.swift */,
 				988E2E742ACCBAEA00DBEA03 /* Assets.xcassets */,
 				988E2E762ACCBAEA00DBEA03 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98075C2C2ADD90C7001E28CB /* AccountScreen.swift in Sources */,
 				988E2E732ACCBAE900DBEA03 /* MainScreen.swift in Sources */,
 				988E2E712ACCBAE900DBEA03 /* GymApp.swift in Sources */,
 			);
