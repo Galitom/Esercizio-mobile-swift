@@ -174,6 +174,6 @@ struct MainScreen_Previews: PreviewProvider{
     }
 }
 
-#Preview {
+/*#Preview {
     MainScreen()
-}
+}*/
