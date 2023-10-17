@@ -163,15 +163,16 @@ struct navigationBar: View{
 				}
 			}
 			.toolbarColorScheme(.dark, for: .navigationBar)
-			.toolbarBackground(
-
-				// 1
-				Color.blue,
-				// 2
-				for: .navigationBar)
+			.toolbarBackground(Color.blue, for: .navigationBar)
 			.toolbarBackground(.visible, for: .navigationBar)
 		}
 	}
+
+struct MainScreen_Previews: PreviewProvider{
+    static var previews: some View{
+        MainScreen()
+    }
+}
 
 #Preview {
     MainScreen()
