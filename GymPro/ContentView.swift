@@ -5,12 +5,14 @@ struct ContentView: View {
 	//Scheda Principale
 	var body: some View {
 		NavigationStack {
-			
-			carousel()
-			Spacer()
-			/*Rectangle()
-				.frame(height: 1000)*/
-					
+			List{
+				carousel()
+				Rectangle()
+					.frame(width: 250, height: 250)
+				Rectangle()
+					.frame(width: 250, height: 250)
+				
+			}
 			.navigationTitle("Home")
 			.toolbar{
 				NavigationLink(destination: AccountScreen()) {
@@ -19,7 +21,7 @@ struct ContentView: View {
 						.symbolRenderingMode(.hierarchical)
 						.accentColor(Color(red: 201/255, green: 201/255, blue: 201/255, opacity: 1))
 						.foregroundColor(.white)
-						.padding([.bottom], 10)
+						//.padding([.bottom], 5)
 				}
 			}
 			.toolbarColorScheme(.dark, for: .navigationBar)
@@ -31,6 +33,7 @@ struct ContentView: View {
 
 //Struttura quadrato schede
 struct scheda: View {
+	@State private var isVisible = false
 	var index: Int
 	var formName: String
 	@Binding var forms: [String]
@@ -44,21 +47,36 @@ struct scheda: View {
 				RoundedRectangle(cornerRadius: 25)
 					.stroke(.blue, lineWidth: 2)
 					.frame(width: 150, height: 150)
+				
 				VStack {
 					Text("\(formName)")
 						.font(.headline)
-					Button(action: {
-						removeForm(index)
-					}) {
-						Image(systemName: "trash")
-							.foregroundColor(.red)
-							.frame(alignment: .bottom)
+					
+					if(isVisible){
+						Spacer()
+							.frame(height: 7.0)
+						
+						Button(action: {
+							removeForm(index)
+						}) {
+							Image(systemName: "trash")
+								.foregroundColor(.red)
+								.frame(alignment: .bottom)
+						}
 					}
+					
 				}
+				.simultaneousGesture(
+					LongPressGesture(minimumDuration: 0.3)
+						.onEnded { _ in
+							isVisible.toggle()
+						}
+				)
 			}
 		}
 	}
 }
+
 
 struct carousel: View{
 	@State private var forms: [String] = []
