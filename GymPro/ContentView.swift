@@ -2,17 +2,29 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+	//@Binding var isVisible: Bool
 	//Scheda Principale
 	var body: some View {
 		NavigationStack {
 			List{
 				carousel()
+					.listRowSeparator(.hidden)
+					.listRowInsets(.init(top: 35, leading: 0, bottom: 0, trailing: 0))
 				Rectangle()
 					.frame(width: 250, height: 250)
+					.listRowSeparator(.hidden)
+					.listRowInsets(.init(top: 35, leading: 100, bottom: 0, trailing: 100))
+					.cornerRadius(50)
+					.foregroundColor(.blue)
+					
 				Rectangle()
 					.frame(width: 250, height: 250)
-				
+					.listRowSeparator(.hidden)
+					.listRowInsets(.init(top: 35, leading: 100, bottom: 0, trailing: 100))
+					.cornerRadius(50)
+					.foregroundColor(.blue)
 			}
+			
 			.navigationTitle("Home")
 			.toolbar{
 				NavigationLink(destination: AccountScreen()) {
@@ -21,19 +33,27 @@ struct ContentView: View {
 						.symbolRenderingMode(.hierarchical)
 						.accentColor(Color(red: 201/255, green: 201/255, blue: 201/255, opacity: 1))
 						.foregroundColor(.white)
-						//.padding([.bottom], 5)
+					//.padding([.bottom], 5)
 				}
 			}
 			.toolbarColorScheme(.dark, for: .navigationBar)
 			.toolbarBackground(Color.blue, for: .navigationBar)
 			.toolbarBackground(.visible, for: .navigationBar)
+			//.padding([.top], 20)
+			.scrollContentBackground(.hidden)
+			
+			/*.onTapGesture {
+				if(isVisible == true){
+					isVisible.toggle()
+				}
+			}*/
 		}
 	}
 }
 
 //Struttura quadrato schede
 struct scheda: View {
-	@State private var isVisible = false
+	@State private var isVisible: Bool = false
 	var index: Int
 	var formName: String
 	@Binding var forms: [String]
@@ -43,14 +63,18 @@ struct scheda: View {
 		Button(action: {
 			print("Scheda \(formName) has been tapped")
 		}) {
+
 			ZStack {
 				RoundedRectangle(cornerRadius: 25)
 					.stroke(.blue, lineWidth: 2)
 					.frame(width: 150, height: 150)
+					.padding([.leading], 1)
 				
 				VStack {
 					Text("\(formName)")
-						.font(.headline)
+						.font(.callout)
+						.multilineTextAlignment(.center)
+						
 					
 					if(isVisible){
 						Spacer()
@@ -66,21 +90,24 @@ struct scheda: View {
 					}
 					
 				}
-				.simultaneousGesture(
-					LongPressGesture(minimumDuration: 0.3)
-						.onEnded { _ in
-							isVisible.toggle()
-						}
-				)
+
 			}
 		}
+		.simultaneousGesture(
+			LongPressGesture(minimumDuration: 0.3)
+				.onEnded { _ in
+					isVisible = true
+
+				}
+		)
+		
 	}
 }
 
 
 struct carousel: View{
 	@State private var forms: [String] = []
-	//@State private var menuVisible = false
+	
 	
 	func addForm() {
 		let newFormName = "Scheda \(forms.count + 1)"
@@ -105,8 +132,30 @@ struct carousel: View{
 				}
 				defaultButtonCarousel(addForm: addForm)
 			}
-			.padding([.horizontal], 25)
+			.padding([.vertical],1)
 		}
+		//.padding([.horizontal], 10)
+	}
+}
+
+struct RowView: View {
+	
+	@State var longPress = false
+	var body: some View {
+		Button(action: {
+			if (self.longPress) {
+				self.longPress.toggle()
+			} else {
+				// Normal button code here
+			}
+		}) {
+			// Buttons LaF here
+		}
+		// RowView code here.
+		.simultaneousGesture(LongPressGesture(minimumDuration: 0.5)
+			.onEnded { _ in
+				self.longPress = true
+		})
 	}
 }
 
@@ -122,12 +171,16 @@ struct defaultButtonCarousel: View {
 				RoundedRectangle(cornerRadius: 25)
 					.stroke(.blue, lineWidth: 2)
 					.frame(width: 150, height: 150)
+					.padding([.leading], 1)
 				VStack {
 					Image(systemName: "plus")
-						.font(.title)
+						.aspectRatio(contentMode: .fit)
+						.font(.largeTitle)
 						.padding([.vertical], 5)
 					Text("Aggiungi Scheda")
-						.font(.headline)
+						.font(.callout)
+						.fontWeight(.regular)
+						
 				}
 			}
 		}
