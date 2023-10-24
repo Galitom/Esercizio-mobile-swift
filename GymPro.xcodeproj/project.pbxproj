@@ -14,6 +14,7 @@
 		985C9C222AE54BA00077D8ED /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985C9C212AE54BA00077D8ED /* Persistence.swift */; };
 		985C9C252AE54BA00077D8ED /* GymPro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 985C9C232AE54BA00077D8ED /* GymPro.xcdatamodeld */; };
 		985C9C2C2AE54E480077D8ED /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985C9C2B2AE54E480077D8ED /* AccountScreen.swift */; };
+		DB6D6E232AE7BAC200CD793E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6D6E222AE7BAC200CD793E /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		985C9C212AE54BA00077D8ED /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		985C9C242AE54BA00077D8ED /* GymPro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GymPro.xcdatamodel; sourceTree = "<group>"; };
 		985C9C2B2AE54E480077D8ED /* AccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountScreen.swift; sourceTree = "<group>"; };
+		DB6D6E222AE7BAC200CD793E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				985C9C182AE54B9F0077D8ED /* GymProApp.swift */,
 				985C9C1A2AE54B9F0077D8ED /* ContentView.swift */,
 				985C9C2B2AE54E480077D8ED /* AccountScreen.swift */,
+				DB6D6E222AE7BAC200CD793E /* LoginView.swift */,
 				985C9C1C2AE54BA00077D8ED /* Assets.xcassets */,
 				985C9C212AE54BA00077D8ED /* Persistence.swift */,
 				985C9C232AE54BA00077D8ED /* GymPro.xcdatamodeld */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6D6E232AE7BAC200CD793E /* LoginView.swift in Sources */,
 				985C9C222AE54BA00077D8ED /* Persistence.swift in Sources */,
 				985C9C252AE54BA00077D8ED /* GymPro.xcdatamodeld in Sources */,
 				985C9C1B2AE54B9F0077D8ED /* ContentView.swift in Sources */,
@@ -281,6 +285,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GymPro/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,6 +314,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GymPro/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
