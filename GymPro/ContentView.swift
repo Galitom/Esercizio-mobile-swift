@@ -5,6 +5,7 @@ struct ContentView: View {
 	//@Binding var isVisible: Bool
 	//Scheda Principale
 	var body: some View {
+		
 		NavigationStack {
 			List{
 				carousel()

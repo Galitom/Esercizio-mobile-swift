@@ -60,9 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				985C9C182AE54B9F0077D8ED /* GymProApp.swift */,
+				DB6D6E222AE7BAC200CD793E /* LoginView.swift */,
 				985C9C1A2AE54B9F0077D8ED /* ContentView.swift */,
 				985C9C2B2AE54E480077D8ED /* AccountScreen.swift */,
-				DB6D6E222AE7BAC200CD793E /* LoginView.swift */,
 				985C9C1C2AE54BA00077D8ED /* Assets.xcassets */,
 				985C9C212AE54BA00077D8ED /* Persistence.swift */,
 				985C9C232AE54BA00077D8ED /* GymPro.xcdatamodeld */,
