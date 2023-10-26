@@ -45,7 +45,7 @@ struct MyTextField : View {
     
 }
 
-struct LoginView: View {
+struct RegisterView: View {
     @State var userValue = UserData(nome: "", cognome: "")
     
     var body: some View {
@@ -57,7 +57,7 @@ struct LoginView: View {
             MyTextField(withIcon: "key.fill", textValue: $userValue.email, isMandatory: true, isSecret: true, textHint: "email")
             
             HStack(spacing: 50){
-                Button("Login"){
+                Button("Registrati"){
                 }.foregroundColor(.purple)
                     .disabled(userValue.isAllMandatoryFiledsEmpty)
                 Button("Pulisci"){
