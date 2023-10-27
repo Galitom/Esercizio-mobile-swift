@@ -2,52 +2,57 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-	//@Binding var isVisible: Bool
+	@State var isVisible: Bool = false
+	@State var isLoggedIn: Bool = true
 	//Scheda Principale
 	var body: some View {
-		
-		NavigationStack {
-			List{
-				carousel()
-					.listRowSeparator(.hidden)
-					.listRowInsets(.init(top: 35, leading: 0, bottom: 0, trailing: 0))
-				Rectangle()
-					.frame(width: 250, height: 250)
-					.listRowSeparator(.hidden)
-					.listRowInsets(.init(top: 35, leading: 100, bottom: 0, trailing: 100))
-					.cornerRadius(50)
-					.foregroundColor(.blue)
+		if(isLoggedIn){
+			NavigationStack {
+				List{
+					carousel()
+						.listRowSeparator(.hidden)
+						.listRowInsets(.init(top: 35, leading: 0, bottom: 0, trailing: 0))
+					Rectangle()
+						.frame(width: 250, height: 250)
+						.listRowSeparator(.hidden)
+						.listRowInsets(.init(top: 35, leading: 100, bottom: 0, trailing: 100))
+						.cornerRadius(50)
+						.foregroundColor(.blue)
 					
-				Rectangle()
-					.frame(width: 250, height: 250)
-					.listRowSeparator(.hidden)
-					.listRowInsets(.init(top: 35, leading: 100, bottom: 0, trailing: 100))
-					.cornerRadius(50)
-					.foregroundColor(.blue)
-			}
-			
-			.navigationTitle("Home")
-			.toolbar{
-				NavigationLink(destination: AccountScreen()) {
-					Image(systemName: "person.crop.circle.fill")
-						.font(.system(size: 35))
-						.symbolRenderingMode(.hierarchical)
-						.accentColor(Color(red: 201/255, green: 201/255, blue: 201/255, opacity: 1))
-						.foregroundColor(.white)
-					//.padding([.bottom], 5)
+					Rectangle()
+						.frame(width: 250, height: 250)
+						.listRowSeparator(.hidden)
+						.listRowInsets(.init(top: 35, leading: 100, bottom: 0, trailing: 100))
+						.cornerRadius(50)
+						.foregroundColor(.blue)
 				}
-			}
-			.toolbarColorScheme(.dark, for: .navigationBar)
-			.toolbarBackground(Color.blue, for: .navigationBar)
-			.toolbarBackground(.visible, for: .navigationBar)
-			//.padding([.top], 20)
-			.scrollContentBackground(.hidden)
-			
-			/*.onTapGesture {
-				if(isVisible == true){
-					isVisible.toggle()
+				
+				.navigationTitle("Home")
+				.toolbar{
+					NavigationLink(destination: AccountScreen()) {
+						Image(systemName: "person.crop.circle.fill")
+							.font(.system(size: 35))
+							.symbolRenderingMode(.hierarchical)
+							.accentColor(Color(red: 201/255, green: 201/255, blue: 201/255, opacity: 1))
+							.foregroundColor(.white)
+						//.padding([.bottom], 5)
+					}
 				}
-			}*/
+				.toolbarColorScheme(.dark, for: .navigationBar)
+				.toolbarBackground(Color.blue, for: .navigationBar)
+				.toolbarBackground(.visible, for: .navigationBar)
+				//.padding([.top], 20)
+				.scrollContentBackground(.hidden)
+				
+				/*.onTapGesture {
+				 if(isVisible == true){
+				 isVisible.toggle()
+				 }
+				 }*/
+			}
+		}
+		else{
+			LoginView(isLoggedIn: $isLoggedIn)
 		}
 	}
 }
@@ -237,6 +242,8 @@ struct navigationBar: View{
 			.toolbarBackground(.visible, for: .navigationBar)
 		}
 	}
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)

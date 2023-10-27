@@ -2,9 +2,10 @@ import SwiftUI
 
 struct LoginView: View {
 	@State var userValue = UserData(/*email: "", password: "",*/ nome: "", cognome: "")
+	@Binding var isLoggedIn: Bool
     
     var body: some View {
-        NavigationStack{
+		VStack{
             Image("Gym")
             MyTextField(withIcon: "person.fill", textValue: $userValue.nome, textHint: "Nome")
             MyTextField(withIcon: "person.fill", textValue: $userValue.cognome, textHint: "Cognome")
@@ -47,13 +48,14 @@ struct LoginView: View {
 				
 				Button(action: {
 					print("Sign In")
+					isLoggedIn = true
 				}) {
 					Text("Sign In")
-					  .frame(minWidth: 80)
-					  .font(.system(size: 20))
-					  .padding([.vertical], 10)
-					  .padding([.horizontal], 15)
-					  .foregroundColor(.white)
+						.frame(minWidth: 80)
+						.font(.system(size: 20))
+						.padding([.vertical], 10)
+						.padding([.horizontal], 15)
+						.foregroundColor(.white)
 				}
 				.disabled(userValue.isAllMandatoryFiledsEmpty)
 				.background(Color.blue)
@@ -137,7 +139,7 @@ struct MyTextField : View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(isLoggedIn: .constant(false))
     }
 }
 
