@@ -1,18 +1,20 @@
 import SwiftUI
 
-struct LoginView: View {
-	@State var userValue = UserData(nome: "", cognome: "")
+struct RegisterView: View {
+	@State var userValue = UserData(/*email: "", password: "",*/ nome: "", cognome: "")
 	@Binding var isLoggedIn: Bool
 	@Binding var isRegistered: Bool
 	
 	var body: some View {
 		VStack{
 			Image("Gym")
-			MyTextFieldLogin(withIcon: "envelope.fill", textValue: $userValue.email, isMandatory: true, textHint: "Email", isEmail: true)
+			MyTextField(withIcon: "person.fill", textValue: $userValue.nome, textHint: "Nome")
+			MyTextField(withIcon: "person.fill", textValue: $userValue.cognome, textHint: "Cognome")
+			MyTextField(withIcon: "envelope.fill", textValue: $userValue.email, isMandatory: true, textHint: "Email", isEmail: true)
 				.autocapitalization(.none)
 				.autocorrectionDisabled(true)
 
-			MyTextFieldLogin(withIcon: "key.fill", textValue: $userValue.password, isMandatory: true, isSecret: true, textHint: "Password")
+			MyTextField(withIcon: "key.fill", textValue: $userValue.password, isMandatory: true, isSecret: true, textHint: "Password")
 				.padding(.bottom, 50)
 			
 			HStack(spacing: 75){
@@ -31,10 +33,10 @@ struct LoginView: View {
 				.cornerRadius(25)
 				*/
 				Button(action: {
-					print("Sign Up")
-					isRegistered = false
+					print("Pulisci")
+					userValue.emptyFields()
 				}) {
-					Text("Sign Up")
+					Text("Pulisci")
 					  .frame(minWidth: 80)
 					  .font(.system(size: 20))
 					  .padding([.vertical], 10)
@@ -46,10 +48,11 @@ struct LoginView: View {
 				.cornerRadius(20)
 				
 				Button(action: {
-					print("Login")
+					print("Registrati")
 					isLoggedIn = true
+					isRegistered = true
 				}) {
-					Text("Login")
+					Text("Registrati")
 						.frame(minWidth: 80)
 						.font(.system(size: 20))
 						.padding([.vertical], 10)
@@ -61,14 +64,19 @@ struct LoginView: View {
 				.cornerRadius(20)
 				
 			}
+			
 		}
 	}
+	
 }
 
-struct UserDataLogin {
+struct UserData {
    
 	var email: String = ""
 	var password: String = ""
+	var nome: String = ""
+	var cognome : String = ""
+	var eta : Int = 0
 	
 	var isAllMandatoryFiledsEmpty : Bool {
 		return email.isEmpty || password.isEmpty
@@ -77,9 +85,14 @@ struct UserDataLogin {
 	var isAnyMandatoryFiledsEmpty : Bool {
 		return email.isEmpty && password.isEmpty
 	}
+	
+	mutating func emptyFields(){
+		nome = ""
+		cognome = ""
+	}
 }
 
-struct MyTextFieldLogin : View {
+struct MyTextField : View {
 	var withIcon : String
 	@Binding var textValue : String
 	var isMandatory : Bool = false
@@ -126,9 +139,9 @@ struct MyTextFieldLogin : View {
 	
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct RegisterView_Previews: PreviewProvider {
 	static var previews: some View {
-		LoginView(isLoggedIn: .constant(false), isRegistered: .constant(true))
+		RegisterView(isLoggedIn: .constant(false), isRegistered: .constant(false))
 	}
 }
 

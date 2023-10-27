@@ -14,10 +14,42 @@
             filePath = "GymPro/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "ContentView"
             landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "CD57726F-8BF9-4E80-B686-B36DE053D9C8 - 53d1015c5f0c0879"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of GymPro.scheda.isVisible : Swift.Bool"
+                  moduleName = "GymPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deborahnimis/Desktop/Project/Gym/GymPro/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "CD57726F-8BF9-4E80-B686-B36DE053D9C8 - 44cbb36483a34d37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GymPro.scheda.init(index: Swift.Int, formName: Swift.String, forms: SwiftUI.Binding&lt;Swift.Array&lt;Swift.String&gt;&gt;, removeForm: (Swift.Int) -&gt; ()) -&gt; GymPro.scheda"
+                  moduleName = "GymPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deborahnimis/Desktop/Project/Gym/GymPro/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

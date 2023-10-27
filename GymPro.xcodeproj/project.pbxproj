@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		985841F02AEC407600DBF14F /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985841EF2AEC407600DBF14F /* RegisterView.swift */; };
+		985841F22AEC418400DBF14F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985841F12AEC418400DBF14F /* LoginView.swift */; };
+		985841F42AEC482E00DBF14F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985841F32AEC482E00DBF14F /* SplashView.swift */; };
 		985C9C192AE54B9F0077D8ED /* GymProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985C9C182AE54B9F0077D8ED /* GymProApp.swift */; };
 		985C9C1B2AE54B9F0077D8ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985C9C1A2AE54B9F0077D8ED /* ContentView.swift */; };
 		985C9C1D2AE54BA00077D8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985C9C1C2AE54BA00077D8ED /* Assets.xcassets */; };
@@ -14,10 +17,12 @@
 		985C9C222AE54BA00077D8ED /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985C9C212AE54BA00077D8ED /* Persistence.swift */; };
 		985C9C252AE54BA00077D8ED /* GymPro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 985C9C232AE54BA00077D8ED /* GymPro.xcdatamodeld */; };
 		985C9C2C2AE54E480077D8ED /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985C9C2B2AE54E480077D8ED /* AccountScreen.swift */; };
-		DB6D6E232AE7BAC200CD793E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6D6E222AE7BAC200CD793E /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		985841EF2AEC407600DBF14F /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		985841F12AEC418400DBF14F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		985841F32AEC482E00DBF14F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		985C9C152AE54B9F0077D8ED /* GymPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		985C9C182AE54B9F0077D8ED /* GymProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymProApp.swift; sourceTree = "<group>"; };
 		985C9C1A2AE54B9F0077D8ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,7 +31,6 @@
 		985C9C212AE54BA00077D8ED /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		985C9C242AE54BA00077D8ED /* GymPro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GymPro.xcdatamodel; sourceTree = "<group>"; };
 		985C9C2B2AE54E480077D8ED /* AccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountScreen.swift; sourceTree = "<group>"; };
-		DB6D6E222AE7BAC200CD793E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +63,10 @@
 		985C9C172AE54B9F0077D8ED /* GymPro */ = {
 			isa = PBXGroup;
 			children = (
+				985841F32AEC482E00DBF14F /* SplashView.swift */,
 				985C9C182AE54B9F0077D8ED /* GymProApp.swift */,
-				DB6D6E222AE7BAC200CD793E /* LoginView.swift */,
+				985841EF2AEC407600DBF14F /* RegisterView.swift */,
+				985841F12AEC418400DBF14F /* LoginView.swift */,
 				985C9C1A2AE54B9F0077D8ED /* ContentView.swift */,
 				985C9C2B2AE54E480077D8ED /* AccountScreen.swift */,
 				985C9C1C2AE54BA00077D8ED /* Assets.xcassets */,
@@ -149,9 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB6D6E232AE7BAC200CD793E /* LoginView.swift in Sources */,
 				985C9C222AE54BA00077D8ED /* Persistence.swift in Sources */,
+				985841F42AEC482E00DBF14F /* SplashView.swift in Sources */,
+				985841F22AEC418400DBF14F /* LoginView.swift in Sources */,
 				985C9C252AE54BA00077D8ED /* GymPro.xcdatamodeld in Sources */,
+				985841F02AEC407600DBF14F /* RegisterView.swift in Sources */,
 				985C9C1B2AE54B9F0077D8ED /* ContentView.swift in Sources */,
 				985C9C2C2AE54E480077D8ED /* AccountScreen.swift in Sources */,
 				985C9C192AE54B9F0077D8ED /* GymProApp.swift in Sources */,

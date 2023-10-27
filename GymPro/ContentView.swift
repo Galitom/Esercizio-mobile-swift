@@ -3,10 +3,11 @@ import CoreData
 
 struct ContentView: View {
 	@State var isVisible: Bool = false
-	@State var isLoggedIn: Bool = true
+	@State var isLoggedIn: Bool = false
+	@State var isRegistered: Bool = true
 	//Scheda Principale
 	var body: some View {
-		if(isLoggedIn){
+		if(isLoggedIn && isRegistered){
 			NavigationStack {
 				List{
 					carousel()
@@ -51,8 +52,11 @@ struct ContentView: View {
 				 }*/
 			}
 		}
+		else if(isRegistered){
+			LoginView(isLoggedIn: $isLoggedIn, isRegistered: $isRegistered)
+		}
 		else{
-			LoginView(isLoggedIn: $isLoggedIn)
+			RegisterView(isLoggedIn: $isLoggedIn, isRegistered: $isRegistered)
 		}
 	}
 }
