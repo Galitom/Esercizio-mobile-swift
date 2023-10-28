@@ -3,7 +3,7 @@ import CoreData
 
 struct ContentView: View {
 	@State var isVisible: Bool = false
-	@State var isLoggedIn: Bool = false
+	@State var isLoggedIn: Bool = true
 	@State var isRegistered: Bool = true
 	//Scheda Principale
 	var body: some View {
@@ -63,17 +63,14 @@ struct ContentView: View {
 
 //Struttura quadrato schede
 struct scheda: View {
-	@State private var isVisible: Bool = false
+	//@State private var isVisible: Bool = false
 	var index: Int
-	var formName: String
+	@State var formName: String
 	@Binding var forms: [String]
 	var removeForm: (Int) -> Void
 
 	var body: some View {
-		Button(action: {
-			print("Scheda \(formName) has been tapped")
-		}) {
-
+		NavigationLink(destination: SchedaView(formName: $formName)){
 			ZStack {
 				RoundedRectangle(cornerRadius: 25)
 					.stroke(.blue, lineWidth: 2)
@@ -84,8 +81,8 @@ struct scheda: View {
 					Text("\(formName)")
 						.font(.callout)
 						.multilineTextAlignment(.center)
-						
 					
+					/*
 					if(isVisible){
 						Spacer()
 							.frame(height: 7.0)
@@ -97,20 +94,20 @@ struct scheda: View {
 								.foregroundColor(.red)
 								.frame(alignment: .bottom)
 						}
-					}
+					}*/
 					
 				}
-
 			}
+			/*
+			.simultaneousGesture(
+				LongPressGesture(minimumDuration: 0.3)
+					.onEnded { _ in
+						isVisible = true
+						
+					}
+			)*/
+			
 		}
-		.simultaneousGesture(
-			LongPressGesture(minimumDuration: 0.3)
-				.onEnded { _ in
-					isVisible = true
-
-				}
-		)
-		
 	}
 }
 

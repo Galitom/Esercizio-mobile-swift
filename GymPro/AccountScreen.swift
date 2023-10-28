@@ -176,6 +176,7 @@ struct AccountScreen: View {
 			}
 			.navigationTitle("Account")
 			.scrollContentBackground(.hidden)
+			.scrollDisabled(true)
 			
 			if(editMode?.wrappedValue.isEditing == true){
 				HStack{
